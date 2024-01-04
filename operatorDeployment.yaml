@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-custom-operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: my-custom-operator
+  template:
+    metadata:
+      labels:
+        name: my-custom-operator
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: my-custom-operator
+          image: madistestk8s/pipeline_test:TAG_PLACEHOLDER
+          imagePullPolicy: Always

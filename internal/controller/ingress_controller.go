@@ -59,7 +59,7 @@ func (r *IngressReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 
 	// Corrected log statement
 	log.Info("Host value", "host", customIngress.Spec.Host)
-	fmt.Println("Host value for assignment is TEST:", customIngress.Spec.Host)
+	fmt.Println("Host value for assignment is:", customIngress.Spec.Host)
 
 	return ctrl.Result{}, nil
 }

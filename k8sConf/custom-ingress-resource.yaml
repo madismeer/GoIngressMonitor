@@ -1,0 +1,7 @@
+apiVersion: network.example.com/v1
+kind: Ingress
+metadata:
+  name: my-custom-ingress
+  namespace: default
+spec:
+  host: "example.com"

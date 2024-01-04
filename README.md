@@ -6,7 +6,7 @@ Test assignment for Go and Kubernetes
 2. Koostada go operaator-sdk  https://github.com/operator- framework/operator-sdk raamistiku abil näidisoperaator, mis loeb Kubernetese ingress tüüpi CRD-st „host“ ning kirjutab selle operaatori logisse.
 3. Lisada juurde „pipeline“, mis kompileerib ja pakendab rakenduse  dockeri konteineriks.
 4. Täiendada „pipelinet“ nii et rakendus paigaldatakse mõnda vabalt valitud Kubernetese keskkonda kasutades yaml faile.
-5. Lisada näidis CRD giti, mida testimisel  kasutati.
+5. Lisada näidis CRD giti, mida testimisel kasutati.
 
 ## Solution
 1. Created repo in github
@@ -25,6 +25,14 @@ Test assignment for Go and Kubernetes
 4. Implemented the reconcile function in ingress_controller.go to log the Host field of the IngressMonitor CRD
     - Edited ingress_controller.go to edit the reconcile function
 5. Implemented the pipeline to build and deploy the operator
+    - Used google cloud for the kubernetes cluster
+    - Used docker hub for the docker registry
+    - The CI-CD is in .github/workflows/ci-cd.yaml
+    - The pipeline builds the operator and pushes it to docker hub
+    - The pipeline deploys the operator to the kubernetes cluster
+6. Used a generated Ingress CRD in [config/crd/bases/network.example.com_ingresses.yaml](config/crd/bases/network.example.com_ingresses.yaml)
+7. Some of the .yaml files like role and rolebinding are in the k8sConf folder. The custom resource used is also there.
+
 
 
 # Operator SDK Readme

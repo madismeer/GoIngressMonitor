@@ -62,19 +62,19 @@ jobs:
     # # Not Nessessary for a workflow but for personal reference
     # - name: Apply Role for Operator Permissions
     #   run: |
-    #       kubectl apply -f deployments/role.yaml
+    #       kubectl apply -f k8sConf/role.yaml
 
     # - name: Apply RoleBinding for Operator Permissions
     #   run: |
-    #        kubectl apply -f deployments/rolebinding.yaml
+    #        kubectl apply -f k8sConf/rolebinding.yaml
 
     # - name: Apply RoleBinding for Operator Permissions Cluster Wide
     #   run: |
-    #        kubectl apply -f deployments/clusterrole.yaml
+    #        kubectl apply -f k8sConf/clusterrole.yaml
 
     # - name: Apply RoleBinding for Operator Permissions Cluster Wideˇ
     #   run: |
-    #        kubectl apply -f deployments/clusterrolebinding.yaml
+    #        kubectl apply -f k8sConf/clusterrolebinding.yaml
 
     - name: Update Deployment Image
       run: |
